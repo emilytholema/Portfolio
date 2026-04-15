@@ -52,6 +52,18 @@ footer {
 
 
 /* Main-Page*/
+.hint {
+    opacity: 0;
+    animation: fadeInOut 6s ease forwards;
+}
+
+@keyframes fadeInOut {
+    0%   { opacity: 0; }
+    20%  { opacity: 1; }
+    80%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 .home {
     overflow: hidden;
 }
@@ -262,6 +274,28 @@ footer {
     font-size: 1.1rem;
 }
 
+.pdf-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 16px;
+
+    background-color: #7D5A6B;
+    color: white;
+    border-radius: 10px;
+
+    font-size: 0.9rem;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+
+    margin-top: 40px;
+
+}
+
+.pdf-btn:hover {
+    transform: translateY(-2px);
+}
+
 /* Oberer Bereich */
 .container-oben {
     width: min(1100px, 90%);
@@ -437,11 +471,15 @@ footer {
 
 .module img {
     flex: 1.5;
-    /* 👉 Bild bekommt mehr Platz */
     max-width: 600px;
-    /* 👉 maximale Größe */
     width: 100%;
     border-radius: 10px;
+
+    transition: transform 0.3s ease; /* wichtig für Animation */
+}
+
+.module img:hover {
+    transform: scale(1.1);
 }
 
 .uni-fotos {
@@ -584,33 +622,47 @@ footer {
 
 .story-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 35px 40px;
+    grid-template-columns: auto auto; /* ❗ kein 1fr mehr */
+    justify-content: center;         /* ❗ zentriert beide Spalten */
     align-items: center;
+    gap: 30px 70px;
 }
 
+/* Text */
+.story-text {
+    max-width: 400px;
+}
+
+/* Absätze im Text */
 .story-text p {
     font-size: 1.05rem;
+    line-height: 1.7;
     margin-bottom: 18px;
 }
 
-.story-image img {
-    width: 100%;
-    max-width: 420px;
-    display: block;
-    border-radius: 6px;
+.story-text p:last-child {
+    margin-bottom: 0;
 }
 
+/* Bild-Container */
 .story-image {
     display: flex;
     justify-content: center;
 }
 
+/* Bilder */
+.story-image img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Audio */
 audio {
     margin-top: 15px;
     width: 100%;
     max-width: 400px;
-
 }
 
 /* Responsive */
@@ -652,6 +704,7 @@ audio {
         max-width: 100%;
     }
 }
+
 
 /* Responsive */
 @media (max-width: 800px) {
