@@ -2,9 +2,9 @@
 
 body {
     margin: 0;
-    background-color: #F6EAEA;
+    background-color: #F7EDEE;
     font-family: "Kannada MN", serif;
-    color: #3a3333;
+    color: #3F3537;
     line-height: 1.6;
 }
 
@@ -14,25 +14,41 @@ p {
     margin: 0;
 }
 
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+
+
 a {
-    color: rgba(114, 28, 138, 1);
+    color: #7D5A6B;
     text-decoration: none;
 }
 
 a:hover {
+    color: #D88FA7;
     text-decoration: underline;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    background-color: #8E5EA2;
+    background-color: #7D5A6B;
     color: white;
     padding: 25px;
     margin-top: 60px;
     font-size: 1rem;
 }
 
+.box,
+.container-unten,
+.persoenlich-box {
+    background-color: #F3E3E6;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(125, 90, 107, 0.08);
+    border: 1px solid rgba(125, 90, 107, 0.08);
+}
 
 
 /* Main-Page*/
@@ -67,7 +83,7 @@ footer {
     height: 56px;
     border: none;
     border-radius: 14px;
-    background-color: rgba(142, 94, 162, 0.92);
+    background-color: rgba(125, 90, 107, 0.95);
     color: white;
     font-size: 1.8rem;
     display: flex;
@@ -80,7 +96,7 @@ footer {
 
 .menu-button:hover {
     transform: translateY(-1px);
-    background-color: rgba(126, 79, 146, 0.96);
+    background-color: #D88FA7;
 }
 
 .menu-dropdown {
@@ -90,14 +106,12 @@ footer {
     min-width: 220px;
     padding: 10px;
     border-radius: 18px;
-    background-color: rgba(255, 255, 255, 0.88);
+    background-color: rgba(255, 248, 248, 0.92);
     backdrop-filter: blur(10px);
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
-
     display: flex;
     flex-direction: column;
     gap: 0;
-
     opacity: 0;
     visibility: hidden;
     transform: translateY(-8px);
@@ -112,21 +126,20 @@ footer {
 
 .menu-dropdown a {
     text-decoration: none;
-    color: #3a3333;
+    color: #3F3537;
     padding: 12px 14px;
     font-size: 1.05rem;
     display: block;
-        transition: background-color 0.2s ease;
-
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* 👉 Linie zwischen den Links */
 .menu-dropdown a:not(:last-child) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(63, 53, 55, 0.08);
 }
 
 .menu-dropdown a:hover {
-    background-color: rgba(142, 94, 162, 0.10);
+    background-color: rgba(216, 143, 167, 0.14);
+    color: #7D5A6B;
 }
 
 /* alle Bilder */
@@ -201,7 +214,7 @@ footer {
     right: 0;
     top: 60%;
     height: 0.3%;
-    background-color: #3a3333;
+    background-color: rgba(63, 53, 55, 0.45);
     z-index: 0;
 }
 
@@ -232,7 +245,7 @@ footer {
     justify-content: space-between;
     gap: 20px;
     padding: 10px 0;
-    border-bottom: 1px solid rgba(58, 51, 51, 0.12);
+    border-bottom: 1px solid rgba(63, 53, 55, 0.12);
 }
 
 /* Header */
@@ -242,7 +255,6 @@ footer {
 }
 
 .header-lebenslauf h1 {
-    font-size: 2.5rem;
     margin-bottom: 8px;
 }
 
@@ -262,11 +274,9 @@ footer {
 /* Gemeinsamer Boxstil */
 
 .box {
-    background-color: #EEF5E9;
-    border-radius: 25px;
     padding: 25px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
+
 /* Linke Karte */
 .kontaktdaten {
     flex: 1;
@@ -312,8 +322,6 @@ footer {
 .container-unten {
     width: min(1100px, 90%);
     margin: 0 auto 40px;
-    background-color: #EEF5E9;
-    border-radius: 25px;
     padding: 25px;
     box-sizing: border-box;
 }
@@ -351,6 +359,7 @@ footer {
 .softskills {
     flex: 1;
 }
+
 .softskills ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -396,8 +405,6 @@ footer {
 }
 
 .header-uni h1 {
-    font-size: 2.2rem;
-    font-weight: normal;
     margin: 0;
 }
 
@@ -429,8 +436,10 @@ footer {
 }
 
 .module img {
-    flex: 1.5;        /* 👉 Bild bekommt mehr Platz */
-    max-width: 600px; /* 👉 maximale Größe */
+    flex: 1.5;
+    /* 👉 Bild bekommt mehr Platz */
+    max-width: 600px;
+    /* 👉 maximale Größe */
     width: 100%;
     border-radius: 10px;
 }
@@ -442,13 +451,17 @@ footer {
     display: flex;
     gap: 20px;
 
-    overflow-x: auto;      /* 👉 Scroll aktivieren */
-    padding-bottom: 10px;  /* Platz für Scrollbar */
+    overflow-x: auto;
+    /* 👉 Scroll aktivieren */
+    padding-bottom: 10px;
+    /* Platz für Scrollbar */
 }
 
 .uni-fotos img {
-    flex: 0 0 auto;   /* 👉 verhindert schrumpfen */
-    width: 300px;     /* feste Breite */
+    flex: 0 0 auto;
+    /* 👉 verhindert schrumpfen */
+    width: 300px;
+    /* feste Breite */
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
@@ -469,8 +482,6 @@ footer {
 }
 
 .header-persoenlich h1 {
-    font-size: 2.5rem;
-    font-weight: normal;
     margin: 0;
 }
 
@@ -486,21 +497,29 @@ footer {
 }
 
 .persoenlich-einleitung {
-    width: min(900px, 90%);
-    margin: 0 auto 70px;
     text-align: center;
+    margin-bottom: 70px;
 }
 
 .persoenlich-einleitung p {
     font-size: 1.1rem;
-    margin-bottom: 28px;
+    line-height: 1.8;
+    margin: 0 auto 14px;
+    max-width: 500px;
+}
+
+.persoenlich-einleitung p:first-child {
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.persoenlich-einleitung p:last-child {
+    margin-bottom: 0;
 }
 
 .persoenlich-box {
     width: min(1100px, 90%);
     margin: 0 auto 40px;
-    background-color: #EEF5E9;
-    border-radius: 25px;
     padding: 38px 30px;
 }
 
@@ -513,9 +532,6 @@ footer {
     font-size: 1.9rem;
 }
 
-.hobby-block {
-    margin-bottom: 28px;
-}
 
 .hobby-block h3 {
     font-size: 1.5rem;
@@ -525,6 +541,33 @@ footer {
 .hobby-block p {
     font-size: 1.05rem;
     max-width: 900px;
+}
+
+.hobby-block {
+    margin-bottom: 28px;
+    position: relative;
+    padding-right: 140px; /* Platz für Bild schaffen */
+}
+
+.hover-img {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+
+    width: 90px;
+    height: 90px;
+    padding: 12px;        
+
+    object-fit: contain;  
+
+    opacity: 0;
+    transform: translateY(-50%) scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.hobby-block:hover .hover-img {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
 }
 
 .sonstiges {
@@ -561,6 +604,13 @@ footer {
 .story-image {
     display: flex;
     justify-content: center;
+}
+
+audio {
+    margin-top: 15px;
+    width: 100%;
+    max-width: 400px;
+
 }
 
 /* Responsive */
@@ -602,6 +652,7 @@ footer {
         max-width: 100%;
     }
 }
+
 /* Responsive */
 @media (max-width: 800px) {
     .container-oben {
@@ -616,7 +667,7 @@ footer {
     .label {
         min-width: unset;
     }
-    
+
     .container-skills {
         flex-direction: column;
     }
@@ -626,7 +677,7 @@ footer {
         gap: 20px;
     }
 
-        .header-uni {
+    .header-uni {
         flex-direction: column;
         text-align: center;
     }
