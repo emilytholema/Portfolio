@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emily Tholema – Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
-<body>
+<body class="uni-page">
+    <!-- Menü Dropdown -->
     <div class="menu-container">
         <button class="menu-button" id="menuButton" aria-label="Menü öffnen">
             ☰
@@ -20,19 +22,23 @@
             <a href="./persoenlich.html">Persönliches</a>
         </div>
     </div>
+
+    <!-- Header -->
     <header class="header-uni">
-        <img src="./images/Uni.png">
+        <img src="./images/uni-note.png">
         <h1>Meine wunderschöne <br>
             Hochschule :)</h1>
     </header>
 
-    <section class="uni-beschreibung">
+    <!-- Uni-Beschreibung -->
+    <section class="uni-description">
         <p>Die <b>Hochschule Hannover</b> bietet ein praxisnahes Informatikstudium, 
             bei dem theoretische Inhalte direkt in Projekten angewendet werden. 
             So konnte ich seit September 2024 bereits Einblicke in Bereiche wie Programmierung, Datenbanken und Webentwicklung gewinnen.</p>
 
     </section>
 
+    <!-- Modulplan -->
     <section class="module">
         <div>
             <h2>Unser Modulplan:</h2>
@@ -50,7 +56,8 @@
         <img src="./images/Modulplan.png" alt="Modulplan Fak. 4">
     </section>
 
-    <section class="uni-fotos">
+    <!-- Fotoreihe -->
+    <section class="uni-photoGallery">
         <img src="./images/uni1.jpg">
         <img src="./images/uni2.jpg">
         <img src="./images/uni3.jpg">
@@ -61,21 +68,4 @@
     <footer>
         <p><b>Emily Tholema</b></p>
     </footer>
-
-    <script>
-        const menuButton = document.getElementById("menuButton");
-        const menuDropdown = document.getElementById("menuDropdown");
-
-        menuButton.addEventListener("click", () => {
-            menuDropdown.classList.toggle("open");
-        });
-
-        document.addEventListener("click", (event) => {
-            const isClickInside = document.querySelector(".menu-container").contains(event.target);
-
-            if (!isClickInside) {
-                menuDropdown.classList.remove("open");
-            }
-        });
-    </script>
 </body>

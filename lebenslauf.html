@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emily Tholema – Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
-<body class="lebenslauf-seite">
+<body class="lebenslauf-page">
+    <!-- Menü Dropdown -->
     <div class="menu-container">
         <button class="menu-button" id="menuButton" aria-label="Menü öffnen">
             ☰
@@ -21,6 +23,8 @@
             
         </div>
     </div>
+
+    <!-- Header -->
     <header class="header-lebenslauf">
         <h1>Lebenslauf</h1>
         <p>Emily Tholema</p>
@@ -30,43 +34,45 @@
 </a>
     </header>
 
-    <section class="container-oben">
-        <div class="box kontaktdaten">
+    <section class="container-split">
+        <!-- Kontaktdaten -->
+        <div class="card kontaktdaten">
             <h2>Kontaktdaten</h2>
 
-            <div class="lebenslauf-zeile">
+            <div class="card-line">
                 <p class="label">Name:</p>
                 <p>Emily Tholema</p>
             </div>
 
-            <div class="lebenslauf-zeile">
+            <div class="card-line">
                 <p class="label">Geburtstag:</p>
                 <p>11.01.2002</p>
             </div>
 
-            <div class="lebenslauf-zeile">
+            <div class="card-line">
                 <p class="label">Geburtsort:</p>
                 <p>Holzminden</p>
             </div>
 
-            <div class="lebenslauf-zeile">
+            <div class="card-line">
                 <p class="label">E-Mail:</p>
                 <a href="mailto:emily.tholema@gmail.com">emily.tholema@gmail.com</a>
             </div>
 
-            <div class="lebenslauf-zeile">
+            <div class="card-line">
                 <p class="label">Tel.:</p>
                 <p>0173 8267071</p>
             </div>
 
-            <div class="lebenslauf-zeile">
+            <div class="card-line">
                 <p class="label">Adresse:</p>
                 <address>Hannover</address>
             </div>
         </div>
 
-        <div class="box profil">
-            <img src="./images/Emily.png" alt="Cartoon-Bild von Emily">
+        <!-- Profilbild -->
+        <div class="card profil">
+            <img src="./images/Emily.png" alt="Illustration von Emily Tholema">
             <p>
                 Hi, ich bin Emily Tholema und studiere Informatik im 4. Semester an der Hochschule Hannover.
                 Ich interessiere mich besonders für Webentwicklung und Webdesign, da ich hier kreatives Gestalten 
@@ -76,13 +82,13 @@
     </section>
 
     <!-- Bildung -->
-    <section class="container-unten">
+    <section class="full-container">
         <h2>Bildung</h2>
-        <div class="lebenslauf-zeile">
+        <div class="card-line">
             <p class="label">September 2024</p>
             <p>Informatik Studium (akt. 4. Semester)</p>
         </div>
-        <div class="lebenslauf-zeile">
+        <div class="card-line">
             <p class="label">Juni 2021</p>
             <p>Abitur (Johannes-Kepler-Gymnasium, Garbsen)</p>
         </div>
@@ -90,13 +96,13 @@
     </section>
 
     <!-- Berufserfahrung -->
-    <section class="container-unten">
+    <section class="full-container">
         <h2>Relevante Berufserfahrung</h2>
-        <div class="lebenslauf-zeile">
+        <div class="card-line">
             <p class="label">April 2025 - heute</p>
             <p>Mentorin des <a href="#INFla">INFluencers-Projekts</a></p>
         </div>
-        <div class="lebenslauf-zeile">
+        <div class="card-line">
             <p class="label">August 2023 - August 2024</p>
             <p>Ausbildung zur Industriekauffrau (Abbruch nach einem Jahr)</p>
         </div>
@@ -104,7 +110,7 @@
 
     <!-- Skills -->
     <section class="container-skills">
-        <div class="box skills">
+        <div class="card skills">
             <h2>Skills</h2>
 
             <div class="skills-icons">
@@ -117,7 +123,7 @@
             </div>
         </div>
 
-        <div class="box softskills">
+        <div class="card softskills">
             <h2>Soft Skills</h2>
             <ul>
                 <li>Kommunikationsfähigkeit</li>
@@ -132,7 +138,7 @@
     </section>
 
     <!-- Details -->
-    <section class="container-unten">
+    <section class="full-container">
         <h2>Details</h2>
         <h3 id="INFla">INFluencers:</h3>
         <p>Ich arbeite seit April 2025 für das INFluencers-Projekt meiner Hochschule. <br>
@@ -157,28 +163,11 @@
             <a href="https://f4.hs-hannover.de/ueber-uns/initiativen/influencers-mentorinnenprogramm">Link zum
                 INFluencers-Programm</a>
         </p>
-
     </section>
 
     <footer>
         <p><b>Emily Tholema</b></p>
     </footer>
-    <script>
-        const menuButton = document.getElementById("menuButton");
-        const menuDropdown = document.getElementById("menuDropdown");
-
-        menuButton.addEventListener("click", () => {
-            menuDropdown.classList.toggle("open");
-        });
-
-        document.addEventListener("click", (event) => {
-            const isClickInside = document.querySelector(".menu-container").contains(event.target);
-
-            if (!isClickInside) {
-                menuDropdown.classList.remove("open");
-            }
-        });
-    </script>
 </body>
 
 </html>

@@ -1,5 +1,4 @@
-/* Allgemein */
-
+/* ----- GRUNDEINSTELLUNGEN ----- */
 body {
     margin: 0;
     background-color: #F7EDEE;
@@ -19,8 +18,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-
-
 a {
     color: #7D5A6B;
     text-decoration: none;
@@ -31,7 +28,18 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Footer */
+
+/* ----- GEMEINSAME ELEMENTE ----- */
+.card,
+.container-split,
+.personal-card,
+.full-container {
+    background-color: #F3E3E6;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(125, 90, 107, 0.08);
+    border: 1px solid rgba(125, 90, 107, 0.08);
+}
+
 footer {
     text-align: center;
     background-color: #7D5A6B;
@@ -41,48 +49,8 @@ footer {
     font-size: 1rem;
 }
 
-.box,
-.container-unten,
-.persoenlich-box {
-    background-color: #F3E3E6;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(125, 90, 107, 0.08);
-    border: 1px solid rgba(125, 90, 107, 0.08);
-}
 
-
-/* Main-Page*/
-.hint {
-    opacity: 0;
-    animation: fadeInOut 6s ease forwards;
-}
-
-@keyframes fadeInOut {
-    0%   { opacity: 0; }
-    20%  { opacity: 1; }
-    80%  { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-.home {
-    overflow: hidden;
-}
-
-.container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.scene {
-    position: relative;
-    width: min(100vw, calc(100vh * 1200 / 700));
-    aspect-ratio: 1200 / 700;
-}
-
-/* Menü oben rechts */
+/* ----- MENÜ ---- */
 .menu-container {
     position: fixed;
     top: 24px;
@@ -123,7 +91,6 @@ footer {
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
     display: flex;
     flex-direction: column;
-    gap: 0;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-8px);
@@ -137,11 +104,11 @@ footer {
 }
 
 .menu-dropdown a {
-    text-decoration: none;
-    color: #3F3537;
+    display: block;
     padding: 12px 14px;
     font-size: 1.05rem;
-    display: block;
+    color: #3F3537;
+    text-decoration: none;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -154,7 +121,35 @@ footer {
     color: #7D5A6B;
 }
 
-/* alle Bilder */
+
+/* ----- HOME ----- */
+.home {
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scene {
+    position: relative;
+    width: min(100vw, calc(100vh * 1200 / 700));
+    aspect-ratio: 1200 / 700;
+}
+
+.hint {
+    animation: hideHint 8s forwards;
+}
+
+@keyframes hideHint {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 .scene img {
     position: absolute;
     height: auto;
@@ -162,56 +157,50 @@ footer {
     display: block;
 }
 
-.klick {
+.clickable {
     transition: transform 0.3s ease;
 }
 
-.klick:hover {
+.clickable:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
 
-/* Regal */
-.regal {
+.shelf {
     width: 29%;
     left: 1%;
     bottom: 32%;
     z-index: 2;
 }
 
-/* Pflanze */
-.pflanze {
+.plant {
     width: 8%;
     top: 7%;
     left: 30%;
     z-index: 4;
 }
 
-/* Pinnwand */
-.pinnwand {
+.pinboard {
     width: 28%;
     right: 7%;
     top: 10%;
     z-index: 1;
 }
 
-/* Lebenslauf */
-.lebenslauf {
+.lebenslauf-note {
     width: 6%;
     right: 26%;
     top: 14%;
     z-index: 3;
 }
 
-/* Uni */
-.uni {
+.uni-note {
     width: 14%;
     right: 8.5%;
     top: 28%;
     z-index: 3;
 }
 
-/* Bildschirm */
 .screen {
     width: 25%;
     left: 44%;
@@ -219,8 +208,7 @@ footer {
     z-index: 2;
 }
 
-/* Linie */
-.line {
+.wall {
     position: absolute;
     left: 0;
     right: 0;
@@ -230,8 +218,7 @@ footer {
     z-index: 0;
 }
 
-/* Tisch */
-.tisch {
+.table {
     position: absolute;
     left: 40%;
     right: 26%;
@@ -242,25 +229,17 @@ footer {
     z-index: 1;
 }
 
-/* Lebenslauf-Seite */
-.lebenslauf-seite {
+
+/* ----- LEBENSLAUF-SEITE ----- */
+.lebenslauf-page {
     overflow-x: hidden;
 }
 
-.lebenslauf-seite h2 {
+.lebenslauf-page h2 {
     margin-bottom: 20px;
     font-size: 1.5rem;
 }
 
-.lebenslauf-zeile {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(63, 53, 55, 0.12);
-}
-
-/* Header */
 .header-lebenslauf {
     text-align: center;
     padding: 50px 20px 70px;
@@ -276,28 +255,21 @@ footer {
 
 .pdf-btn {
     display: inline-block;
-    margin-top: 8px;
+    margin-top: 40px;
     padding: 8px 16px;
-
     background-color: #7D5A6B;
     color: white;
     border-radius: 10px;
-
     font-size: 0.9rem;
     text-decoration: none;
-
     transition: all 0.3s ease;
-
-    margin-top: 40px;
-
 }
 
 .pdf-btn:hover {
     transform: translateY(-2px);
 }
 
-/* Oberer Bereich */
-.container-oben {
+.container-split {
     width: min(1100px, 90%);
     margin: 0 auto 40px;
     display: flex;
@@ -305,18 +277,26 @@ footer {
     align-items: stretch;
 }
 
-/* Gemeinsamer Boxstil */
-
-.box {
+.card {
     padding: 25px;
 }
 
-/* Linke Karte */
-.kontaktdaten {
+.kontaktdaten,
+.profil,
+.skills,
+.softskills {
     flex: 1;
 }
 
-.kontakt-zeile:last-child {
+.card-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(63, 53, 55, 0.12);
+}
+
+.card-line:last-child {
     border-bottom: none;
 }
 
@@ -329,9 +309,7 @@ footer {
     font-style: normal;
 }
 
-/* Rechte Karte */
 .profil {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -349,18 +327,14 @@ footer {
 
 .profil p {
     max-width: 420px;
-    line-height: 1.6;
 }
 
-/* Unterer Bereich */
-.container-unten {
+.full-container {
     width: min(1100px, 90%);
     margin: 0 auto 40px;
     padding: 25px;
     box-sizing: border-box;
 }
-
-/* Skills */
 
 .container-skills {
     width: min(1100px, 90%);
@@ -385,15 +359,6 @@ footer {
     display: block;
 }
 
-
-.skills {
-    flex: 1;
-}
-
-.softskills {
-    flex: 1;
-}
-
 .softskills ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -415,16 +380,7 @@ footer {
 }
 
 
-/* Uni-Seite */
-.uni-seite {
-    overflow-x: hidden;
-}
-
-.uni-seite h2 {
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-}
-
+/* ----- UNI-SEITE ----- */
 .header-uni {
     width: min(1100px, 90%);
     margin: 80px auto 60px;
@@ -442,7 +398,7 @@ footer {
     margin: 0;
 }
 
-.uni-beschreibung {
+.uni-description {
     width: min(1100px, 90%);
     margin: 0 auto 80px;
     font-size: 1.1rem;
@@ -456,61 +412,52 @@ footer {
     align-items: flex-start;
 }
 
+.module div,
+.module p {
+    flex: 1;
+}
+
 .module h2 {
     width: 100%;
     margin-bottom: 20px;
 }
 
-.module p {
-    flex: 1;
-}
-
-.module div {
-    flex: 1;
-}
-
 .module img {
     flex: 1.5;
-    max-width: 600px;
     width: 100%;
+    max-width: 600px;
     border-radius: 10px;
-
-    transition: transform 0.3s ease; /* wichtig für Animation */
+    transition: transform 0.3s ease;
 }
 
 .module img:hover {
     transform: scale(1.1);
 }
 
-.uni-fotos {
+.uni-photoGallery {
     width: min(1100px, 90%);
     margin: 150px auto 80px;
-
     display: flex;
     gap: 20px;
-
     overflow-x: auto;
-    /* 👉 Scroll aktivieren */
     padding-bottom: 10px;
-    /* Platz für Scrollbar */
 }
 
-.uni-fotos img {
+.uni-photoGallery img {
     flex: 0 0 auto;
-    /* 👉 verhindert schrumpfen */
     width: 300px;
-    /* feste Breite */
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
 }
 
-/* Persönliches-Seite */
-.persoenlich-seite {
+
+/* ----- PERSONAL-SEITE ----- */
+.personal-page {
     overflow-x: hidden;
 }
 
-.header-persoenlich {
+.header-personal {
     width: min(1100px, 90%);
     margin: 50px auto 70px;
     position: relative;
@@ -519,11 +466,11 @@ footer {
     align-items: center;
 }
 
-.header-persoenlich h1 {
+.header-personal h1 {
     margin: 0;
 }
 
-.header-persoenlich img {
+.header-personal img {
     width: 110px;
     height: 110px;
     object-fit: cover;
@@ -534,86 +481,86 @@ footer {
     background-color: white;
 }
 
-.persoenlich-einleitung {
+.personal-einleitung {
     text-align: center;
     margin-bottom: 70px;
 }
 
-.persoenlich-einleitung p {
+.personal-einleitung p {
+    max-width: 500px;
+    margin: 0 auto 14px;
     font-size: 1.1rem;
     line-height: 1.8;
-    margin: 0 auto 14px;
-    max-width: 500px;
 }
 
-.persoenlich-einleitung p:first-child {
+.personal-einleitung p:first-child {
     font-weight: 500;
     font-size: 1.3rem;
 }
 
-.persoenlich-einleitung p:last-child {
+.personal-einleitung p:last-child {
     margin-bottom: 0;
 }
 
-.persoenlich-box {
+.personal-card {
     width: min(1100px, 90%);
     margin: 0 auto 40px;
     padding: 38px 30px;
 }
 
-.persoenlich-box h2 {
+.personal-card h2 {
     font-size: 2rem;
     margin-bottom: 30px;
 }
 
-.hobbies-box h2 {
+.hobby-card h2 {
     font-size: 1.9rem;
 }
 
-
-.hobby-block h3 {
+.hobby-card h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-.hobby-block p {
+.hobby-card p,
+.hobby-sonstiges,
+.story-text p {
     font-size: 1.05rem;
+}
+
+.hobby-card p {
     max-width: 900px;
 }
 
-.hobby-block {
-    margin-bottom: 28px;
+.hobby-item {
     position: relative;
-    padding-right: 140px; /* Platz für Bild schaffen */
+    margin-bottom: 28px;
+    padding-right: 140px;
 }
 
-.hover-img {
+.hover-hobbyImg {
     position: absolute;
     top: 50%;
     right: 20px;
-
     width: 90px;
     height: 90px;
-    padding: 12px;        
-
-    object-fit: contain;  
-
+    padding: 12px;
+    object-fit: contain;
     opacity: 0;
     transform: translateY(-50%) scale(0.9);
     transition: all 0.3s ease;
 }
 
-.hobby-block:hover .hover-img {
+.hobby-item:hover .hover-hobbyImg {
     opacity: 1;
     transform: translateY(-50%) scale(1);
 }
 
-.sonstiges {
+.hobby-sonstiges {
     margin-top: 35px;
-    font-size: 1.05rem;
 }
 
-.programmieren-box h2 {
+.story-card h2 {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 40px;
@@ -622,20 +569,17 @@ footer {
 
 .story-grid {
     display: grid;
-    grid-template-columns: auto auto; /* ❗ kein 1fr mehr */
-    justify-content: center;         /* ❗ zentriert beide Spalten */
+    grid-template-columns: auto auto;
+    justify-content: center;
     align-items: center;
     gap: 30px 70px;
 }
 
-/* Text */
 .story-text {
     max-width: 400px;
 }
 
-/* Absätze im Text */
 .story-text p {
-    font-size: 1.05rem;
     line-height: 1.7;
     margin-bottom: 18px;
 }
@@ -644,13 +588,11 @@ footer {
     margin-bottom: 0;
 }
 
-/* Bild-Container */
 .story-image {
     display: flex;
     justify-content: center;
 }
 
-/* Bilder */
 .story-image img {
     width: 100%;
     max-width: 480px;
@@ -658,61 +600,71 @@ footer {
     display: block;
 }
 
-/* Audio */
 audio {
-    margin-top: 15px;
     width: 100%;
     max-width: 400px;
+    margin-top: 15px;
 }
 
-/* Responsive */
+
+/* ----- RESPONSIVE ----- */
 @media (max-width: 800px) {
-    .header-persoenlich {
+    .container-split,
+    .container-skills,
+    .header-uni,
+    .module,
+    .header-personal {
+        flex-direction: column;
+    }
+
+    .header-uni,
+    .header-personal {
+        text-align: center;
+    }
+
+    .header-personal {
+        gap: 20px;
         justify-content: center;
         padding-top: 20px;
     }
 
-    .header-persoenlich img {
+    .header-personal img {
         position: static;
-        margin-left: 20px;
         width: 90px;
         height: 90px;
+        margin-left: 0;
     }
 
-    .header-persoenlich {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .persoenlich-box {
+    .personal-card {
         padding: 28px 20px;
     }
 
-    .persoenlich-box h2 {
+    .personal-card h2 {
         font-size: 1.6rem;
     }
 
-    .hobby-block h3 {
+    .hobby-card h3 {
         font-size: 1.25rem;
+    }
+
+    .hobby-item {
+        padding-right: 0;
+    }
+
+    .hover-hobbyImg {
+        display: none;
     }
 
     .story-grid {
         grid-template-columns: 1fr;
     }
 
-    .story-image img {
+    .story-image img,
+    .module img {
         max-width: 100%;
     }
-}
 
-
-/* Responsive */
-@media (max-width: 800px) {
-    .container-oben {
-        flex-direction: column;
-    }
-
-    .kontakt-zeile {
+    .card-line {
         flex-direction: column;
         gap: 6px;
     }
@@ -721,25 +673,8 @@ audio {
         min-width: unset;
     }
 
-    .container-skills {
-        flex-direction: column;
-    }
-
     .skills-icons {
         grid-template-columns: repeat(3, 80px);
         gap: 20px;
-    }
-
-    .header-uni {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .module {
-        flex-direction: column;
-    }
-
-    .module img {
-        max-width: 100%;
     }
 }

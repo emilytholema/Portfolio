@@ -6,66 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emily Tholema – Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body class="home">
-    
+    <!-- Menü Dropdown -->
     <div class="menu-container">
-        <button class="menu-button" id="menuButton" aria-label="Menü öffnen">
-            ☰
-        </button>
+        <button class="menu-button" id="menuButton"> ☰ </button>
 
         <div class="menu-dropdown" id="menuDropdown">
             <a href="./lebenslauf.html">Lebenslauf</a>
             <a href="./uni.html">Meine Hochschule</a>
             <a href="./persoenlich.html">Persönliches</a>
-             
         </div>
     </div>
 
-    <div class="container">
-        
+    <!-- responsive Layout - Website passt sich automatisch an jedes Gerät an. -->
+    <div class="container"> 
+        <!-- absolute Positionierung - platziert ein Element ganz genau an eine Stelle -->
         <div class="scene">
             <h3 class="hint">Einige Elemente dieser Seite sind interaktiv. <br> Entdecken Sie sie gerne. </h3>
-            <div class="line"></div>
-            <div class="tisch"></div>
+            <div class="wall"></div>
+            <div class="table"></div>
 
+            <!-- Bilder -->
             <a href="./persoenlich.html">
-                <img src="./images/regal2.png" class="regal klick" alt="Regal">
+                <img src="./images/shelf.png" class="shelf clickable" alt="Hobby-Regal">
             </a>
 
-            <img src="./images/Pflanzen_Wand.png" class="pflanze" alt="Pflanze">
-            <img src="./images/Pinnwand_Notiz.png" class="pinnwand" alt="Pinnwand">
+            <img src="./images/plant.png" class="plant" alt="Pflanze">
+            <img src="./images/pinboard.png" class="pinboard" alt="Pinnwand">
 
             <a href="./lebenslauf.html">
-                <img src="./images/Lebenslauf_bild.png" class="lebenslauf klick" alt="Lebenslauf">
+                <img src="./images/Lebenslauf_bild.png" class="lebenslauf-note clickable" alt="Lebenslauf">
             </a>
 
             <a href="./uni.html">
-                <img src="./images/Uni.png" class="uni klick" alt="Uni">
+                <img src="./images/uni-note.png" class="uni-note clickable" alt="Uni-Bild">
             </a>
 
-            <img src="./images/Bildschrim.png" class="screen" alt="Bildschirm">
+            <img src="./images/screen.png" class="screen" alt="Bildschirm">
         </div>
     </div>
-    <script>
-        const menuButton = document.getElementById("menuButton");
-        const menuDropdown = document.getElementById("menuDropdown");
-
-        menuButton.addEventListener("click", () => {
-            menuDropdown.classList.toggle("open");
-        });
-
-        document.addEventListener("click", (event) => {
-            const isClickInside = document.querySelector(".menu-container").contains(event.target);
-
-            if (!isClickInside) {
-                menuDropdown.classList.remove("open");
-            }
-        });
-    </script>
 </body>
-
-
 
 </html>

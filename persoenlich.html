@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emily Tholema – Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
-<body class="persoenlich-seite">
+<body class="personal-page">
+    <!-- Menü Dropdown -->
     <div class="menu-container">
         <button class="menu-button" id="menuButton" aria-label="Menü öffnen">
             ☰
@@ -21,58 +23,62 @@
            
         </div>
     </div>
-    <header class="header-persoenlich">
+
+    <!-- Header -->
+    <header class="header-personal">
         <h1>Persönliches</h1>
-        <img src="./images/Emily.png" alt="Illustration von Emily">
+        <img src="./images/Emily.png" alt="Illustration von Emily Tholema">
     </header>
 
-    <section class="persoenlich-einleitung">
+    <!-- Einleitung -->
+    <section class="personal-einleitung">
         <p>Willkommen auf meiner persönlichen Seite!</p>
         <p>Hier bekommen Sie einen Einblick in meine Hobbys und Interessen neben dem Studium.</p>
         <p>Ich probiere gerne Neues aus und habe viele unterschiedliche Leidenschaften, die sich auch gerne von Woche zu Woche verändern. :)</p>
         <p>Wenn Sie neugierig geworden sind und mehr über meine anderen Facetten erfahren möchten, sind Sie hier genau richtig.</p>
-        </p>
     </section>
 
-    <section class="persoenlich-box hobbies-box">
+    <!-- Hobbys -->
+    <section class="personal-card hobby-card">
         <h2>Meine (momentanen) Hobbys</h2>
 
-        <div class="hobby-block">
+        <div class="hobby-item">
             <h3>1. Volleyball:</h3>
             <p>Ich spiele seit Anfang 2026 Volleyball beim Hochschulsport und starte ab Ende April zusätzlich mit Beachvolleyball. 
                 Es macht mir unglaublich viel Spaß und ist ein perfekter Ausgleich zum Studium.
             </p>
-            <img src="./images/volleyball.svg" class="hover-img">
+            <img src="./images/volleyball.svg" class="hover-hobbyImg">
         </div>
 
-        <div class="hobby-block">
+        <div class="hobby-item">
             <h3>2. Fitnessstudio:</h3>
             <p>Ich gehe schon seit Ewigkeiten regelmäßig zweimal pro Woche ins Fitnessstudio und arbeite immer noch an meinem ersten Klimmzug
                 :)</p>
-                <img src="./images/hantel.svg" class="hover-img">
+                <img src="./images/hantel.svg" class="hover-hobbyImg">
         </div>
 
-        <div class="hobby-block">
+        <div class="hobby-item">
             <h3>3. Sticken</h3>
             <p>Zurzeit probiere ich mich an meinen ersten Stickprojekten aus 
                 und aktuell ist kein Kleidungsstück in meinem Schrank wirklich sicher vor mir.
             </p>
-                <img src="./images/sticken.svg" class="hover-img">
+                <img src="./images/sticken.svg" class="hover-hobbyImg">
         </div>
 
-        <div class="hobby-block">
+        <div class="hobby-item">
             <h3>4. Yoga</h3>
             <p>Ich versuche, regelmäßig Yoga in meinen Alltag zu integrieren. 
                 Das klappt mal besser und mal schlechter, hilft mir aber sehr, einen Ausgleich zu finden.</p>
-                <img src="./images/yoga.svg" class="hover-img">
+                <img src="./images/yoga.svg" class="hover-hobbyImg">
         </div>
 
-        <p class="sonstiges">
+        <p class="hobby-sonstiges">
             Was ich sonst noch so mache: lesen, wandern, joggen, Freunde treffen, programmieren, ...
         </p>
     </section>
 
-    <section class="persoenlich-box programmieren-box">
+    <!-- Story -->
+    <section class="personal-card story-card">
         <h2>Wie bin ich eigentlich zum programmieren gekommen?</h2>
 
         <div class="story-grid">
@@ -109,22 +115,6 @@
     <footer>
         <p>Emily Tholema</p>
     </footer>
-    <script>
-        const menuButton = document.getElementById("menuButton");
-        const menuDropdown = document.getElementById("menuDropdown");
-
-        menuButton.addEventListener("click", () => {
-            menuDropdown.classList.toggle("open");
-        });
-
-        document.addEventListener("click", (event) => {
-            const isClickInside = document.querySelector(".menu-container").contains(event.target);
-
-            if (!isClickInside) {
-                menuDropdown.classList.remove("open");
-            }
-        });
-    </script>
 </body>
 
 </html>
