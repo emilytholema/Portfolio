@@ -142,7 +142,8 @@ footer {
 }
 
 .hint {
-    animation: hideHint 8s forwards;
+    font-size: 1.3rem;
+    animation: hideHint 10s forwards;
 }
 
 @keyframes hideHint {
@@ -168,7 +169,7 @@ footer {
 
 .shelf {
     width: 29%;
-    left: 1%;
+    left: 2%;
     bottom: 32%;
     z-index: 2;
 }
@@ -202,9 +203,9 @@ footer {
 }
 
 .screen {
-    width: 25%;
-    left: 44%;
-    bottom: 25%;
+    width: 24%;
+    left: 43%;
+    bottom: 26.5%;
     z-index: 2;
 }
 
@@ -219,16 +220,18 @@ footer {
 }
 
 .table {
-    position: absolute;
-    left: 40%;
-    right: 26%;
-    bottom: 24%;
-    height: 1%;
-    background-color: rgba(113, 76, 57, 0.6);
-    border-radius: 10px;
-    z-index: 1;
+    width: 55%;
+    right: 10%;
+    bottom: -20%;
+    z-index: 2;
 }
 
+.carpet {
+    width: 33%;
+    left: -1%;
+    bottom: 17%;
+    z-index: 1;
+}
 
 /* ----- LEBENSLAUF-SEITE ----- */
 .lebenslauf-page {
