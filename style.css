@@ -140,6 +140,7 @@ footer {
 }
 
 .hint {
+    position: absolute;
     font-size: 1.3rem;
     animation: hideHint 10s forwards;
     z-index: 5;
